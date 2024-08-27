@@ -20,7 +20,7 @@ def multiavatar (string, sansEnv, ver):
         svgString = sP[partV][part]
         # print(colors, svgString)
 
-        regex = "\#(.*?)\;"
+        regex = r"\#(.*?)\;"
         result = re.findall(regex, svgString)
         # print(result)
 
@@ -660,7 +660,7 @@ def multiavatar (string, sansEnv, ver):
     sha256Hash = sha256(string.encode('utf-8')).hexdigest()
 
     import re
-    sha256Numbers = re.sub('\D', '', sha256Hash)
+    sha256Numbers = re.sub(r'\D', '', sha256Hash)
 
     hash = sha256Numbers[0:12]
     
